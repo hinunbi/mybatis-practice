@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="euckr"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+
+	<select id="select" resultType="hashmap" parameterType="map">
+		SELECT 식별자, 등록일시 from
+		MYBATIS_TEST
+		WHERE 식별자 = (SELECT MAX(식별자) FROM MYBATIS_TEST)
+	</select>
+
+	<insert id="insert" parameterType="map">
+		INSERT INTO MYBATIS_TEST
+		(식별자, 등록일시)
+		VALUES
+		(#{식별자} + 1, SYSDATE)
+	</insert>
+
+</mapper>
+
+

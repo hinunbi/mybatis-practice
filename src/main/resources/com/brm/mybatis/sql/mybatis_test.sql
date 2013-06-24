@@ -1,0 +1,8 @@
+DROP TABLE MYBATIS_TEST CASCADE CONSTRAINTS PURGE;
+
+CREATE TABLE MYBATIS_TEST
+(
+    식별자            NUMBER  NOT NULL ,
+    등록일시          DATE   DEFAULT  sysdate,
+ PRIMARY KEY (식별자)
+);
