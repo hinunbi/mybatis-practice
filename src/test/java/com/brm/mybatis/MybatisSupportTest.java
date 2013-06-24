@@ -19,6 +19,7 @@ public class MybatisSupportTest extends MyBatisSupport {
 
 		MyBatisTransactionManager transaction = getTransactionManager();
 		try {
+			
 			transaction.start();
 
 			List results = sqlSession.selectList("test.select");
